@@ -1,0 +1,23 @@
+doctype html 
+html
+    head
+        link(rel='stylesheet', href='/css/general.css')
+        title Term Project  
+    body
+        include ../partials/header
+        h1 View Artworks!
+        a(href = "/search" id = "search")
+            button(type = button) Search 
+        hr
+        ul 
+            each art in artworks  
+                li 
+                    a(href = `/artworks/${art._id}`)
+                        div(class = "itemBox")
+                            h2 #{art.title}
+                            img(src = `${art.poster}` alt = "Poster Image" class = "poster")
+                            p Object ID: #{art._id} 
+                            p Likes: #{art.likes}
+                            p v Reviews below v
+                            each review in art.reviews
+                                p= review 

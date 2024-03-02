@@ -1,0 +1,62 @@
+html 
+    head 
+        link(rel = "stylesheet", href = "/css/general.css")
+    body 
+        script(src="/js/account.js")
+        script(src="/js/addart.js")
+        include ../partials/header
+        if arty
+            h1 Artist Account Page 
+        else 
+            h1 Patron Account Page 
+        hr
+        div#follow
+            h2 Notifications: 
+                ul 
+                    each noti in notifications
+                        p= noti 
+            h2 Followed Users
+                ul
+                    each follower in user.followed
+                        li
+                            a(href=`/accounts/${follower}`) #{follower} 
+                            button(type = "button" onclick = `unFollowBTN('${follower}')`) Unfollow
+            h2 Reviewed Artworks: 
+                ul 
+                    each artwork in reviewed 
+                        li= artwork.title
+                    div(class = "removeBTN") 
+                        each rev in reviews
+                            button(type = "button" onclick =`unReviewBTN('${rev}')`) Remove Review
+            h2 Liked Artworks: 
+                ul 
+                    each artwork in liked 
+                        li= artwork.title 
+                        button(type = "button" onclick =`unLikeBTN('${artwork.title}')`) Remove Like
+            h2 Your Artworks !
+                ul 
+                    each art in userArtworks
+                        li
+                            p Title: #{art.title}
+                            p Artist: #{art.artist}
+                            p Year: #{art.year}
+                            p Category: #{art.category}
+                            p Medium: #{art.medium}
+                            p Description: #{art.description}
+                            img(src = `${art.poster}` alt = "poster image" class = "poster")
+            h2 Your Workshop Participants 
+                ul 
+                    each part in participants
+                        a(href = `/accounts/${part.username}`) 
+                            li= part.username
+        if arty 
+            button(type = "button" onclick = "swapBTN()") Revert to Patron
+            a(href = "/workshop")
+                button(type = "button") Add Workshop
+            
+            a(href = "/addart")
+                button(type = "button") Add Art
+        else 
+            a(href = "/addart")
+                button(type = "button") Become an Artist!
+            button(type = "button" onclick = "logoutBTN()") LOG OUT 

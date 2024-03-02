@@ -1,0 +1,61 @@
+.centerSquare{
+    top: 13%;
+    left: 15%;
+    width: 70%;
+    height: 600px;
+    background-color: white;
+    position: absolute;
+}
+
+#begin{
+    margin-left: 40%;
+    position:absolute;
+    margin-top: 20%;
+    font-size: 90px;
+}
+
+#start{
+    border: none;
+    border-radius: 100%;
+    width: 145px;
+    height: 145px;
+    background-color: #A1D0FC;
+    border-color: none;
+    margin-top: 19%;
+    margin-left: 63%;
+    position: absolute;
+    color: white;
+    font-size: 80px;
+}
+
+#start:hover{
+    opacity: 60%;
+    cursor: pointer;
+}
+
+#start:active{
+    opacity: 30%;
+}
+
+.banner{
+    margin-left: 20%;
+    top: 0%;
+    height: 90%;
+    width: 250px;
+    background-color: #095F92;
+    position: absolute;
+}
+
+.info{
+    color: white;
+    margin-left: 23%;
+    font-weight: 800;
+    position: absolute;
+}
+
+.exampleImage{
+    width: 300px;
+    position: absolute;
+    top: 3%;
+    right: 5%;
+}

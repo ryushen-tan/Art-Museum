@@ -1,0 +1,27 @@
+html
+    head
+        title Artwork Searcher
+        link(rel = "stylesheet", href = "/css/general.css")
+    body
+        include ../partials/header
+        h1 Search for your Artwork! 
+        hr
+        div#filter
+            h1 Filter
+            p Filter By: 
+                select#type(name="type")
+                    option(value="title") Title 
+                    option(value="category") Category
+                    option(value="artist") Artist  
+                    option(value="year") Year 
+                    option(value="medium") Medium 
+
+            br
+            label Search: 
+            input(type="text" id="filterBy")
+        br
+        br
+        div(class = "itemBox")
+            div#results   
+    script(src="/js/search.js")       
+        

@@ -1,0 +1,19 @@
+#heart{
+    width: 30px;
+}
+#liked{
+    display: inline;
+    margin-left: 3%;
+}
+#like{
+    background-color: white;
+    border-color: white;
+    margin-bottom: -3%;
+    border-style: none;
+}
+#like:hover{
+    cursor: pointer;
+}
+h1{
+    display: inline;
+}

@@ -1,0 +1,29 @@
+html 
+    head 
+        link(rel = "stylesheet", href = "/css/general.css")
+    body 
+        script.
+            const username = "#{username}";
+        script(src="/js/accounts.js")
+        include ../partials/header
+        h1 #{username}'s Page 
+        button(type = "button" onclick = "followBTN(username)") Follow 
+        hr
+        h2 #{username}'s Artworks !
+        ul 
+            each art in userArtworks
+                li
+                    a(href = `/artworks/${art._id}`)
+                        p Title: #{art.title}
+                        img(src = `${art.poster}` alt = "poster image" class = "poster")
+        h2 #{username}'s Workshops !
+        ul 
+            each work in workshops  
+                li 
+                    p= work.username 
+                        button(type = "button" onclick = "enroll(username)") ENROLL
+        h2 #{username}'s Reviews !
+            ul 
+                each rev in reviews
+                    li 
+                        p=rev 

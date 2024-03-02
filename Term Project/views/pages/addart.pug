@@ -1,0 +1,30 @@
+doctype html 
+html 
+    head 
+        title Add your Artwork !! 
+        script(src="/js/addart.js")
+        link(rel = 'stylesheet', href =  '/css/general.css')
+    body
+        include ../partials/header
+    h1 Add a piece of Art !
+    hr
+    label(for = "name") Artwork Title : 
+    input(type="text" id="name" size="50")
+    br
+    label(for = "year") What Year: 
+    input(type = "text" id = "year" size = "50")
+    br
+    label(for = "category") Category 
+    input(type = "textbox" id = "category" size = "50")
+    br
+    label(for = "medium") Medium: 
+    input(type = "text" id = "medium" size = "50")
+    br
+    label(for = "description") description: 
+    input(type = "text" id = "description" size = "50")
+    br
+    label(for = "poster") Poster: 
+    input(type = "text" id = "poster")
+    br
+    button(type="button" id="submit" onclick="submit()") Add Art
+        button(type = "button" onclick = "cancel()") Cancel 

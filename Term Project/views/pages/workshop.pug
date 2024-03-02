@@ -1,0 +1,13 @@
+doctype html 
+html 
+    head 
+        title Add a Workshop 
+        script(src="/js/addworkshop.js")
+        link(rel = 'stylesheet', href =  '/css/general.css')
+    body
+        include ../partials/header
+    h1 Add a Workshop 
+    hr
+    label(for = "name") Workshop Title 
+    input(type="text" id = "name" size="50")
+    button(type="button" id="submit" onclick="submit()") Add Workshop 

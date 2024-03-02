@@ -1,0 +1,26 @@
+doctype html 
+html 
+    head 
+        link(rel = "stylesheet", href = "/css/general.css")
+        link(rel = "stylesheet", href = "/css/register.css")
+    body 
+        script(src="/js/register.js")
+        include ../partials/header
+        if acc === "DNE"
+            h1 Register
+        else 
+            h1 Login or Register New Account 
+        hr
+        label(for = "username") Username: 
+        input(type = "text" id = "username" size = "50")
+        br
+        br
+        label(for = "password") Password: 
+        input(type = "text" id = "password" size = "50")
+        br
+        br
+        if acc === "DNE"
+            button(type = "button" onclick = "registerBTN()") register
+        else 
+            button(type = "button" onclick = "loginBTN()") login 
+            button(type = "button" onclick = "registerBTN()") register

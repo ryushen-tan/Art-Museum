@@ -1,0 +1,31 @@
+html 
+    head 
+        link(rel = "stylesheet", href = "/css/general.css")
+        link(rel = "stylesheet", href = "/css/artwork.css")
+    body 
+        script(src="/js/artwork.js")
+        include ../partials/header
+        h1 #{art.title}
+        div#liked 
+            label(for = "like") Like: 
+            button(type = "button" onclick = "like()" id = "like")
+                img(src = "/img/heart.png" alt = "Like Image" id = "heart")
+        hr
+        a(href = `/accounts/${art.artist}` id = "artist") 
+            p Art By:  #{art.artist} 
+        p year: #{art.year}
+        p category: #{art.category}
+        p medium: #{art.medium}
+        p description: #{art.description}
+        p likes: #{art.likes}
+         
+        img(src = `${art.poster}` class = "poster")
+        h2 Reviews:  
+        ul 
+            each review in art.reviews
+                li= review 
+        label(for = "review") Review: 
+        input(type = "text" id = "review" size = "50")
+        button(type = "button" id = "reviewBTN" onclick = "review()") submit
+
+        div(item-id=art._id)
