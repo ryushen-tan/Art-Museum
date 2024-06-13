@@ -549,7 +549,6 @@ app.put('/addreview', async (req, res) => {
 
 
 MongoClient.connect("mongodb://127.0.0.1:27017", { useNewUrlParser: true })
-
 	.then(client => {
 
 		db = client.db("termData");
@@ -562,4 +561,4 @@ MongoClient.connect("mongodb://127.0.0.1:27017", { useNewUrlParser: true })
 	.catch(err => {
 		console.log("Error connecting to database");
 		console.log(err);
-	});
+});
