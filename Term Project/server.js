@@ -466,7 +466,6 @@ app.delete('/unreview', async (req, res) => {
       return res.status(404).json({ error: 'Artwork not found' });
     }
 
-    // Send a response confirming the successful unlike operation
     res.status(200).json({ message: 'Review successful' });
   } catch (error) {
     console.log('Error removing review: ', error);
@@ -513,7 +512,7 @@ app.put('/addlike', async (req, res) => {
 
 app.put('/addreview', async (req, res) => {
   try {
-    const username = req.session.username; // Move this line up
+    const username = req.session.username;
     const user = await cAccounts.findOne({ username });
     const artID = req.body.itemID;
     const ID = { _id: new ObjectId(artID) };
